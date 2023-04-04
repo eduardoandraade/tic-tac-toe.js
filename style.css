@@ -1,6 +1,3 @@
-body {
-    
-}
 
 #gameBoard {
     background-color: #232323;
@@ -20,6 +17,6 @@ body {
     font-size: 5rem;
 }
 
-#gameBoard spanc.win {
-    background-color: #ff25;
+#gameBoard span.win {
+    background-color: #ffff22;
 }
