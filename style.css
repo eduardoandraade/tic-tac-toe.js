@@ -20,3 +20,7 @@
 #gameBoard span.win {
     background-color: #ffff22;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
