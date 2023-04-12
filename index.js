@@ -123,3 +123,17 @@ function handleBoardClick(ev) {
 }
 
 document.getElementById("start").addEventListener("click", initializeGame);
+
+function handleWin(regions) {
+  regions.forEach(function (region) {
+      document.querySelector('[data-region="' + region + '"]').classList.add('win')
+  })
+  const playerName = document.getElementById(turnPlayer).value
+  document.querySelector('h2').innerHTML = playerName + ' venceu!'
+  initializeGame(); // restart the game
+}
+
+function handleDraw() {
+  document.querySelector('h2').innerHTML = 'Empate!'
+  initializeGame(); // restart the game
+}
