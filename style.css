@@ -1,26 +1,126 @@
-
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 1rem 0;
+  }
+  
+  label {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  input {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    margin-right: 1rem;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0069d9;
+  }
+  
 #gameBoard {
-    background-color: #232323;
     display: grid;
-    grid-template-columns: 6rem 6rem 6rem;
-    grid-template-rows: 6rem 6rem 6rem;
-    gap: .5rem ;
-    margin-bottom: 1.5rem;
-    max-width: 19rem;
-}
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 50px auto;
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
 
-#gameBoard span {
-    background-color: #ddd;
+  #gameBoard span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cursor-pointer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: #007bff;
     cursor: pointer;
-    display: grid;
-    place-content: center;
-    font-size: 5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center; /* adicionado para centralizar o conteúdo */
+  }
+  
+.cursor-pointer::before,
+.cursor-pointer::after {
+  content: "";
+  position: absolute;
+  background-color: #007bff;
+  z-index: -1;
 }
 
-#gameBoard span.win {
-    background-color: #ffff22;
+.cursor-pointer::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
 }
 
-.cursor-pointer {
-    cursor: pointer;
+.cursor-pointer::after {
+  top: 0;
+  left: 50%;
+  width: 5px;
+  height: 100%;
 }
+
+.cursor-pointer:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.cursor-pointer:hover::before,
+.cursor-pointer:hover::after {
+  background-color: #fff;
+}
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #turnPlayer {
+    font-weight: bold;
+  }
+  
